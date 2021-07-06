@@ -1,0 +1,36 @@
+package com.demo.qa.testcases;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import com.demo.qa.util.TestUtill;
+
+public class Departuredate {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+
+		System.setProperty("webdriver.chrome.driver",
+				"C:\\Users\\vaibhavkhare\\eclipse-workspace\\Assignment\\src\\main\\resources\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		
+                     
+		driver.get("https://www.makemytrip.com/");
+		
+		driver.manage().timeouts().pageLoadTimeout(TestUtill.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
+		
+		
+		 driver.findElement(By.xpath("//input[@id='departure']")).click();;
+		
+		
+		Thread.sleep(5000);
+	}
+
+}
